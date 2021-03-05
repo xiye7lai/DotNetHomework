@@ -1,0 +1,13 @@
+D:\github\c#\HomeWork_2\HomeWork_2_4\bin\Debug\netcoreapp3.1\HomeWork_2_4.exe
+D:\github\c#\HomeWork_2\HomeWork_2_4\bin\Debug\netcoreapp3.1\HomeWork_2_4.deps.json
+D:\github\c#\HomeWork_2\HomeWork_2_4\bin\Debug\netcoreapp3.1\HomeWork_2_4.runtimeconfig.json
+D:\github\c#\HomeWork_2\HomeWork_2_4\bin\Debug\netcoreapp3.1\HomeWork_2_4.runtimeconfig.dev.json
+D:\github\c#\HomeWork_2\HomeWork_2_4\bin\Debug\netcoreapp3.1\HomeWork_2_4.dll
+D:\github\c#\HomeWork_2\HomeWork_2_4\bin\Debug\netcoreapp3.1\HomeWork_2_4.pdb
+D:\github\c#\HomeWork_2\HomeWork_2_4\obj\Debug\netcoreapp3.1\HomeWork_2_4.csprojAssemblyReference.cache
+D:\github\c#\HomeWork_2\HomeWork_2_4\obj\Debug\netcoreapp3.1\HomeWork_2_4.AssemblyInfoInputs.cache
+D:\github\c#\HomeWork_2\HomeWork_2_4\obj\Debug\netcoreapp3.1\HomeWork_2_4.AssemblyInfo.cs
+D:\github\c#\HomeWork_2\HomeWork_2_4\obj\Debug\netcoreapp3.1\HomeWork_2_4.csproj.CoreCompileInputs.cache
+D:\github\c#\HomeWork_2\HomeWork_2_4\obj\Debug\netcoreapp3.1\HomeWork_2_4.dll
+D:\github\c#\HomeWork_2\HomeWork_2_4\obj\Debug\netcoreapp3.1\HomeWork_2_4.pdb
+D:\github\c#\HomeWork_2\HomeWork_2_4\obj\Debug\netcoreapp3.1\HomeWork_2_4.genruntimeconfig.cache
