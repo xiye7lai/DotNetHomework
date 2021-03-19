@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomoWork_4_1", "HomoWork_4_1\HomoWork_4_1.csproj", "{1D324397-B1E6-4E7A-832D-343E41F7E5A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomoWork_4_2", "HomoWork_4_2\HomoWork_4_2.csproj", "{C0CA4C9D-2A8A-4DE6-859C-29BE7A2F6C85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D324397-B1E6-4E7A-832D-343E41F7E5A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D324397-B1E6-4E7A-832D-343E41F7E5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D324397-B1E6-4E7A-832D-343E41F7E5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D324397-B1E6-4E7A-832D-343E41F7E5A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0CA4C9D-2A8A-4DE6-859C-29BE7A2F6C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0CA4C9D-2A8A-4DE6-859C-29BE7A2F6C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0CA4C9D-2A8A-4DE6-859C-29BE7A2F6C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0CA4C9D-2A8A-4DE6-859C-29BE7A2F6C85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B1959735-1F34-4221-A9FB-0A7369FFF5DA}
+	EndGlobalSection
+EndGlobal
