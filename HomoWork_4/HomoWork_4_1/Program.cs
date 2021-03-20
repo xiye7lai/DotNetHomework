@@ -41,8 +41,7 @@ namespace HomoWork_4_1
         }
         public void ForEach(Action<T> action)
         {
-            Node<T> n;
-            n = head;
+            Node<T> n = head;
             while (n != null)
             {
                 action(n.Data);

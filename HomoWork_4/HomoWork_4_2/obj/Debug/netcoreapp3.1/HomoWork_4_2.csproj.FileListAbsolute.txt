@@ -1,0 +1,13 @@
+D:\github\c#\HomoWork_4\HomoWork_4_2\obj\Debug\netcoreapp3.1\HomoWork_4_2.csprojAssemblyReference.cache
+D:\github\c#\HomoWork_4\HomoWork_4_2\obj\Debug\netcoreapp3.1\HomoWork_4_2.AssemblyInfoInputs.cache
+D:\github\c#\HomoWork_4\HomoWork_4_2\obj\Debug\netcoreapp3.1\HomoWork_4_2.AssemblyInfo.cs
+D:\github\c#\HomoWork_4\HomoWork_4_2\obj\Debug\netcoreapp3.1\HomoWork_4_2.csproj.CoreCompileInputs.cache
+D:\github\c#\HomoWork_4\HomoWork_4_2\bin\Debug\netcoreapp3.1\HomoWork_4_2.exe
+D:\github\c#\HomoWork_4\HomoWork_4_2\bin\Debug\netcoreapp3.1\HomoWork_4_2.deps.json
+D:\github\c#\HomoWork_4\HomoWork_4_2\bin\Debug\netcoreapp3.1\HomoWork_4_2.runtimeconfig.json
+D:\github\c#\HomoWork_4\HomoWork_4_2\bin\Debug\netcoreapp3.1\HomoWork_4_2.runtimeconfig.dev.json
+D:\github\c#\HomoWork_4\HomoWork_4_2\bin\Debug\netcoreapp3.1\HomoWork_4_2.dll
+D:\github\c#\HomoWork_4\HomoWork_4_2\bin\Debug\netcoreapp3.1\HomoWork_4_2.pdb
+D:\github\c#\HomoWork_4\HomoWork_4_2\obj\Debug\netcoreapp3.1\HomoWork_4_2.dll
+D:\github\c#\HomoWork_4\HomoWork_4_2\obj\Debug\netcoreapp3.1\HomoWork_4_2.pdb
+D:\github\c#\HomoWork_4\HomoWork_4_2\obj\Debug\netcoreapp3.1\HomoWork_4_2.genruntimeconfig.cache
