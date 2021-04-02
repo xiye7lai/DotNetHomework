@@ -74,7 +74,7 @@ namespace HomeWork_6_1
         #endregion IXmlSerializable Members
     }
     public delegate int func(object obj1, object obj2);
-    class OrderNumException : Exception
+    public class OrderNumException : Exception
     {
         public OrderNumException(string message) : base(message)
         {
