@@ -1,0 +1,10 @@
+D:\github\c#\HomeWork_9\HomeWork_9_1\obj\Debug\HomeWork_9_1.csprojAssemblyReference.cache
+D:\github\c#\HomeWork_9\HomeWork_9_1\obj\Debug\HomeWork_9_1.Properties.Resources.resources
+D:\github\c#\HomeWork_9\HomeWork_9_1\obj\Debug\HomeWork_9_1.csproj.GenerateResource.cache
+D:\github\c#\HomeWork_9\HomeWork_9_1\obj\Debug\HomeWork_9_1.csproj.CoreCompileInputs.cache
+D:\github\c#\HomeWork_9\HomeWork_9_1\bin\Debug\HomeWork_9_1.exe.config
+D:\github\c#\HomeWork_9\HomeWork_9_1\bin\Debug\HomeWork_9_1.exe
+D:\github\c#\HomeWork_9\HomeWork_9_1\bin\Debug\HomeWork_9_1.pdb
+D:\github\c#\HomeWork_9\HomeWork_9_1\obj\Debug\HomeWork_9_1.exe
+D:\github\c#\HomeWork_9\HomeWork_9_1\obj\Debug\HomeWork_9_1.pdb
+D:\github\c#\HomeWork_9\HomeWork_9_1\obj\Debug\HomeWork_9_1.Form1.resources
