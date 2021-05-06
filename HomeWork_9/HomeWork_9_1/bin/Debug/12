@@ -290,6 +290,6 @@ LoadPostCategoriesTags(cb_blogId, cb_entryId);       LoadPostInfoBlock(cb_blogId
 
     
 
-    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjslSAmncBQETCQnCIfs14WN1pNCZkMFWyW6jdz94JfezN2AVtKuHe_xfg9zywBbqSoQelRkhusVrSrdCSNqJ-tNkNVJQjii3Nbfv5tlrAcswsOVLace54k7-zsMsyzhgsY" />
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjsU-7dgxAH0f0Xzo_bSPSS0e9QtBKk88Yi21J1jO4yck1qZCDVE64HoNAA39ibjtY_wwc_NAEyMi5-JTFtHzDiiHTEPn5LO1ExLmM-9IBJdzlFK9vpL7DrpB2BkmEfWhyI" />
 </body>
 </html>

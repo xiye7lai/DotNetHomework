@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="referrer" content="never" />
-    <meta name="description" content="最近RSS越来越流行，一般都需要专用的软件，有时候，在IE中看见的只是xml文件，很不方便。 我这里做了一个小工具，作为IE的插件，使得点右键&amp;#8220;选Rss In IE&amp;#8221;时，可以直" />
-    <meta property="og:description" content="最近RSS越来越流行，一般都需要专用的软件，有时候，在IE中看见的只是xml文件，很不方便。 我这里做了一个小工具，作为IE的插件，使得点右键&amp;#8220;选Rss In IE&amp;#8221;时，可以直" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    <meta name="description" content="NDoc是一个非常好的文档生成工具，现在还出了一些不错的中文版，如破宝的http://www.percyboy.com/w/ndoc/。但是由于NDoc现在的版本1.3 不支持Web项目，也不支持中文" />
+    <meta property="og:description" content="NDoc是一个非常好的文档生成工具，现在还出了一些不错的中文版，如破宝的http://www.percyboy.com/w/ndoc/。但是由于NDoc现在的版本1.3 不支持Web项目，也不支持中文" />
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>小工具RssInIE： 在IE中点右键，可以直接查看RSS - 拓荒者 - 博客园</title>
+    <title>使用 NDoc 对 asp.net (Web) 项目产生文档的方法 - 拓荒者 - 博客园</title>
     <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
     
     <link rel="stylesheet" href="/css/blog-common.min.css?v=zS6-e1bxywlu3kpHvpr1J6MySwya3ztFtEnS7RYQ0Fk" />
@@ -30,7 +30,7 @@
         var visitorUserId = '';
     </script>
         <script>
-            var currentPostDateAdded = '2005-03-06 12:56';
+            var currentPostDateAdded = '2005-10-08 12:12';
         </script>
     <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
     <script src="/js/blog-common.min.js?v=yJQaJ16S00coMfzvh-NgF2zm2J87f5VfNamFdsnKHrc"></script>
@@ -114,8 +114,8 @@
     <div class="post">
         <h2>
             
-<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dstang2000/archive/2005/03/06/113761.html">
-    <span>小工具RssInIE： 在IE中点右键，可以直接查看RSS</span>
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dstang2000/archive/2005/10/08/250188.html">
+    <span>使用 NDoc 对 asp.net (Web) 项目产生文档的方法</span>
     
 
 
@@ -125,24 +125,8 @@
         </h2>
         <div class="postbody">
             <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
-<p>最近RSS越来越流行，一般都需要专用的软件，有时候，在IE中看见的只是xml文件，很不方便。 
-<br>我这里做了一个小工具，作为IE的插件，使得点右键“选Rss In IE”时，可以直接查看RSS。 
-<br>程序的原理是使用xslt将RSS的xml转成为链接，放到窗口左边，而右边用一个iframe来放内容。 
-<br>（由于iframe使用得不太好，欢迎提出改进意见）。 
-<br>
-<br>下载RssInIE：<a title="RssInIE.zip" href="/Files/dstang2000/RssInIE.zip">RssInIE.zip</a>&nbsp;(2k,含源程序)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 附：<a title="反安装文件" href="/Files/dstang2000/RssInIE_uninstall.zip">反安装文件</a> 
-<br>
-<br>解压后，安装inf文件以后，就可以看见IE右键菜单上多了一项“Rss In IE”。 
-<br>
-<br>点击后，打开一个新窗口，如图： 
-<br><img height="384" src="/images/cnblogs_com/dstang2000/RssInIE2.jpg" width="512">&nbsp; 
-<br>
-</p>
-<p><font size="-1">参考文献：<a href="http://www.gotdotnet.com/Community/UserSamples/Details.aspx?SampleGuid=80648c4e-584f-4aa1-919a-fc7ce6630be1"> 
-<br>JJulian: Simple RSS Feed Transform with XSLT </a>
-<br><a href="http://www.codeproject.com/jscript/TinyRSS.asp">Matthias Hertel: TinyRSS, an RSS Reader for Internet Explorer</a> 
-<br><a href="http://www.thundermain.com/FullSource.html">Full Source</a></font> 
-</p>
+<p>NDoc是一个非常好的文档生成工具，现在还出了一些不错的中文版，如<br>破宝的<a href="http://www.percyboy.com/w/ndoc/">http://www.percyboy.com/w/ndoc/</a>。<br>但是由于NDoc现在的版本1.3 不支持Web项目，也不支持中文文件名，<br>下面提出一个临时性的解决办法</p>
+<p>1. 解决不认识http://的Web项目的问题<br>方法： <br>（1）将.csproj文件复制一份，其中将项目类型由“Web”改为“Local”<br>（2）将.sln复制一份，将其中的项目路径由<a href="http://localhost/xxxx">http://localhost/xxxx</a> 改为本地路径如 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c:/inetpub/wwwroot/xxxx ，并指向则才改过的.csproj文件。<br>然后用NDoc打开刚改过的.sln文件即可。<br><br>2. 解决不认识中文文件名、路径名的问题<br>解决方法：将.csproj用记事本打开，在最前面加上一行：<br>&lt;?xml version="1.0" encoding="utf-8" ?&gt; <br>然后另存（但文件名不变），但一定要将编码设为utf-8。<br>注意，如果项目保存则上面一行由vs.net去掉，则又得重新加上。<br><br>以上办法行得通，不过是临时的办法，<br>希望NDoc1.4中会解决这些问题。</p>
 </div>
 <div id="MySignature"></div>
 <div class="clear"></div>
@@ -154,12 +138,12 @@
         </div>
         <p class="postfoot">
             posted on 
-<span id="post-date">2005-03-06 00:56</span>&nbsp;
+<span id="post-date">2005-10-08 12:12</span>&nbsp;
 <a href="https://www.cnblogs.com/dstang2000/">拓荒者</a>&nbsp;
-阅读(<span id="post_view_count">1579</span>)&nbsp;
-评论(<span id="post_comment_count">5</span>)&nbsp;
-<a href="https://i.cnblogs.com/EditPosts.aspx?postid=113761" rel="nofollow">编辑</a>&nbsp;
-<a href="javascript:void(0)" onclick="AddToWz(113761);return false;">收藏</a>
+阅读(<span id="post_view_count">1194</span>)&nbsp;
+评论(<span id="post_comment_count">3</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=250188" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(250188);return false;">收藏</a>
         </p>
     </div>
 </div>
@@ -168,7 +152,7 @@
 <script>markdown_highlight();</script>
 <script>
     var allowComments = true, cb_blogId = 9986, cb_blogApp = 'dstang2000', cb_blogUserGuid = 'd796310b-63cf-dd11-9e4d-001cf0cd104b';
-    var cb_entryId = 113761, cb_entryCreatedDate = '2005-03-06 00:56', cb_postType = 1;
+    var cb_entryId = 250188, cb_entryCreatedDate = '2005-10-08 12:12', cb_postType = 1;
     updatePostStats(
         [cb_entryId],
         function(id, count) { $("#post_view_count").text(count) },
@@ -290,6 +274,6 @@ LoadPostCategoriesTags(cb_blogId, cb_entryId);       LoadPostInfoBlock(cb_blogId
 
     
 
-    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjslSAmncBQETCQnCIfs14WN1pNCZkMFWyW6jdz94JfezN2AVtKuHe_xfg9zywBbqSoQelRkhusVrSrdCSNqJ-tNkNVJQjii3Nbfv5tlrAcswsOVLace54k7-zsMsyzhgsY" />
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjusllSplzY4UElJ_ND4rV9WAT7L0nhRL_rYxUj_becmdctjXo4XxU5BRTPl9VU2Eo7d3PU4-p9ydZSvJJ5bgDfAR44ATmV9s5pQAPRcEAXuhA30JlK-FE7-l-zrPFoaM3E" />
 </body>
 </html>

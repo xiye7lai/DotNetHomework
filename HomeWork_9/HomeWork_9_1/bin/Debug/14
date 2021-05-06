@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="referrer" content="never" />
-    <meta name="description" content="最近RSS越来越流行，一般都需要专用的软件，有时候，在IE中看见的只是xml文件，很不方便。 我这里做了一个小工具，作为IE的插件，使得点右键&amp;#8220;选Rss In IE&amp;#8221;时，可以直" />
-    <meta property="og:description" content="最近RSS越来越流行，一般都需要专用的软件，有时候，在IE中看见的只是xml文件，很不方便。 我这里做了一个小工具，作为IE的插件，使得点右键&amp;#8220;选Rss In IE&amp;#8221;时，可以直" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    <meta name="description" content="请参见随笔： Rss In IE" />
+    <meta property="og:description" content="请参见随笔： Rss In IE" />
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>小工具RssInIE： 在IE中点右键，可以直接查看RSS - 拓荒者 - 博客园</title>
+    <title>我的小工具RssInIE： 在IE中点右键，可以直接查看RSS  - 拓荒者 - 博客园</title>
     <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
     
     <link rel="stylesheet" href="/css/blog-common.min.css?v=zS6-e1bxywlu3kpHvpr1J6MySwya3ztFtEnS7RYQ0Fk" />
@@ -30,7 +30,7 @@
         var visitorUserId = '';
     </script>
         <script>
-            var currentPostDateAdded = '2005-03-06 12:56';
+            var currentPostDateAdded = '2005-03-06 08:55';
         </script>
     <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
     <script src="/js/blog-common.min.js?v=yJQaJ16S00coMfzvh-NgF2zm2J87f5VfNamFdsnKHrc"></script>
@@ -114,8 +114,8 @@
     <div class="post">
         <h2>
             
-<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dstang2000/archive/2005/03/06/113761.html">
-    <span>小工具RssInIE： 在IE中点右键，可以直接查看RSS</span>
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dstang2000/articles/113796.html">
+    <span>我的小工具RssInIE： 在IE中点右键，可以直接查看RSS </span>
     
 
 
@@ -125,24 +125,8 @@
         </h2>
         <div class="postbody">
             <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
-<p>最近RSS越来越流行，一般都需要专用的软件，有时候，在IE中看见的只是xml文件，很不方便。 
-<br>我这里做了一个小工具，作为IE的插件，使得点右键“选Rss In IE”时，可以直接查看RSS。 
-<br>程序的原理是使用xslt将RSS的xml转成为链接，放到窗口左边，而右边用一个iframe来放内容。 
-<br>（由于iframe使用得不太好，欢迎提出改进意见）。 
-<br>
-<br>下载RssInIE：<a title="RssInIE.zip" href="/Files/dstang2000/RssInIE.zip">RssInIE.zip</a>&nbsp;(2k,含源程序)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 附：<a title="反安装文件" href="/Files/dstang2000/RssInIE_uninstall.zip">反安装文件</a> 
-<br>
-<br>解压后，安装inf文件以后，就可以看见IE右键菜单上多了一项“Rss In IE”。 
-<br>
-<br>点击后，打开一个新窗口，如图： 
-<br><img height="384" src="/images/cnblogs_com/dstang2000/RssInIE2.jpg" width="512">&nbsp; 
-<br>
-</p>
-<p><font size="-1">参考文献：<a href="http://www.gotdotnet.com/Community/UserSamples/Details.aspx?SampleGuid=80648c4e-584f-4aa1-919a-fc7ce6630be1"> 
-<br>JJulian: Simple RSS Feed Transform with XSLT </a>
-<br><a href="http://www.codeproject.com/jscript/TinyRSS.asp">Matthias Hertel: TinyRSS, an RSS Reader for Internet Explorer</a> 
-<br><a href="http://www.thundermain.com/FullSource.html">Full Source</a></font> 
-</p>
+请参见随笔：
+<br><a title="Rss In IE" href="/dstang2000/archive/2005/03/06/113761.html">Rss In IE</a>
 </div>
 <div id="MySignature"></div>
 <div class="clear"></div>
@@ -154,12 +138,12 @@
         </div>
         <p class="postfoot">
             posted on 
-<span id="post-date">2005-03-06 00:56</span>&nbsp;
+<span id="post-date">2005-03-06 08:55</span>&nbsp;
 <a href="https://www.cnblogs.com/dstang2000/">拓荒者</a>&nbsp;
-阅读(<span id="post_view_count">1579</span>)&nbsp;
-评论(<span id="post_comment_count">5</span>)&nbsp;
-<a href="https://i.cnblogs.com/EditPosts.aspx?postid=113761" rel="nofollow">编辑</a>&nbsp;
-<a href="javascript:void(0)" onclick="AddToWz(113761);return false;">收藏</a>
+阅读(<span id="post_view_count">480</span>)&nbsp;
+评论(<span id="post_comment_count">2</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditArticles.aspx?postid=113796" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(113796);return false;">收藏</a>
         </p>
     </div>
 </div>
@@ -168,7 +152,7 @@
 <script>markdown_highlight();</script>
 <script>
     var allowComments = true, cb_blogId = 9986, cb_blogApp = 'dstang2000', cb_blogUserGuid = 'd796310b-63cf-dd11-9e4d-001cf0cd104b';
-    var cb_entryId = 113761, cb_entryCreatedDate = '2005-03-06 00:56', cb_postType = 1;
+    var cb_entryId = 113796, cb_entryCreatedDate = '2005-03-06 08:55', cb_postType = 2;
     updatePostStats(
         [cb_entryId],
         function(id, count) { $("#post_view_count").text(count) },
@@ -290,6 +274,6 @@ LoadPostCategoriesTags(cb_blogId, cb_entryId);       LoadPostInfoBlock(cb_blogId
 
     
 
-    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjslSAmncBQETCQnCIfs14WN1pNCZkMFWyW6jdz94JfezN2AVtKuHe_xfg9zywBbqSoQelRkhusVrSrdCSNqJ-tNkNVJQjii3Nbfv5tlrAcswsOVLace54k7-zsMsyzhgsY" />
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjsJ8mNv8lLFQ1O9G1LYzyfGu9KAkXbKA530g0k1QUOtGvzv3UHuVsnv0TvTNchbJndKYaTzzyg4Hz3AUDbmNqRESOsYjn9i22PVE1mH7pXRvXDkkKN9L13eRTglwD-iqSQ" />
 </body>
 </html>

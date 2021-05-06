@@ -1,1360 +1,279 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="zh-cn">
 <head>
     <meta charset="utf-8" />
-    <meta name="referrer" content="always" />
-    <title>IT新闻 - 博客园</title>
-    <meta name="keywords" content="IT新闻,it news,互联网新闻,业界新闻,IT资讯,IT业界,新闻频道" />
-    <meta name="description">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link id="rsslink" title="rss" type="application/rss+xml" rel="alternate" href="http://feed.cnblogs.com/news/rss" />
-    <link rel="shortcut icon" href="//common.cnblogs.com/favicon.ico" />
-    <link rel="stylesheet" href="/Content/bundles/news.css?v=3xP9uuDECgAlC6BJj9zLyJMsa0nKoD5dAt4paP25qKM" />
-    <link rel="stylesheet" type="text/css" href="//mention.cnblogs.com/css/mention-simple.css?id=20160613">
-    <link id="smallScreen" rel="stylesheet" type="text/css" media="screen and (max-width:768px)" href="/Content/smallScreen.css?v=nefLI3mgFt-9OMgJr0ayftmT0REvBpYq2wb0OMDO1pY" />
-    <script type="text/javascript" src="/Scripts/jquery.min.js"></script>
-    <script type="text/javascript" src="/Scripts/bundles/news.js?v=NWzOaUGAd-DmDHBEBJ-MPL3eLK8Vpc26nS6ubbAaS3o"></script>
-    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    <meta name="description" content="NDoc是一个非常好的文档生成工具，现在还出了一些不错的中文版，如破宝的http://www.percyboy.com/w/ndoc/。但是由于NDoc现在的版本1.3 不支持Web项目，也不支持中文" />
+    <meta property="og:description" content="NDoc是一个非常好的文档生成工具，现在还出了一些不错的中文版，如破宝的http://www.percyboy.com/w/ndoc/。但是由于NDoc现在的版本1.3 不支持Web项目，也不支持中文" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>使用 NDoc 对 asp.net (Web) 项目产生文档的方法 - 拓荒者 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=zS6-e1bxywlu3kpHvpr1J6MySwya3ztFtEnS7RYQ0Fk" />
+    <link id="MainCss" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001.min.css?v=9x2ZP2K8SSBJowZA6xv0D5FvOmlvd5g21u0NBEAEwfQ" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/anothereon001/bundle-anothereon001-mobile.min.css?v=xFiYH0_zTHqf_pk9Nf2PvR4VdQ1qJnJcRVcot-VdM-8" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/dstang2000/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/dstang2000/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/dstang2000/wlwmanifest.xml" />
     <script>
-        var googletag = googletag || {};
-        googletag.cmd = googletag.cmd || [];
+        var currentBlogId = 9986;
+        var currentBlogApp = 'dstang2000';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'AnotherEon001';
+        var visitorUserId = '';
     </script>
-    <script>
-        googletag.cmd.push(function () {
-            googletag.defineSlot('/1090369/news_E1', [728, 90], 'div-gpt-ad-1533633736227-0').addService(googletag.pubads());
-            googletag.defineSlot('/1090369/news_E2', [300, 250], 'div-gpt-ad-1533633736227-1').addService(googletag.pubads());
-            googletag.defineSlot('/1090369/news_E3', [300, 250], 'div-gpt-ad-1533633736227-2').addService(googletag.pubads());
-            googletag.defineSlot('/1090369/news_E4', [468, 60], 'div-gpt-ad-1533633736227-3').addService(googletag.pubads());
-            googletag.pubads().enableSingleRequest();
-            googletag.enableServices();
-        });
-    </script>
+        <script>
+            var currentPostDateAdded = '2005-10-08 12:12';
+        </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=yJQaJ16S00coMfzvh-NgF2zm2J87f5VfNamFdsnKHrc"></script>
+    
+    
+    
 </head>
-<body>
+<body class="has-navbar">
     <a name="top"></a>
-    <div id="wrap">
-        <div id="header">
-            <a name="top"></a>
-            <div id="wrapper_top_block">
-                <div id="login_area">
-                </div>
-                <div id="top_mini_nav_block">&laquo; <a href="//www.cnblogs.com" class="dark_gray" title="程序员的网上家园">网站首页</a> <a href="http://zzk.cnblogs.com/" class="dark_gray">找找看</a></div>
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>
-    <div id="main_wrapper">
-        <div id="main_header">
-            <div class="header_div">
-                <div class="logo">
-                    <a href="//www.cnblogs.com">
-                        <img src="/Images/logo.gif" alt="logo" />
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" /></a></li>
+                <li><a href="/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
                     </a>
-                </div>
-                <div class="banner">
-                    <div id="clubHeader_panelNews">
-                        <div id="e1"></div>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="mainmenu">
-                <div class="feedback_block">
-                    <a href="//group.cnblogs.com/forum/public/">反馈问题或建议</a>
-                </div>
-                <ul id="navlist_main">
-                    <li style="margin-left:20px;">
-                        <a href="//www.cnblogs.com">首页</a>
-                    </li>
-                    <li>
-                        <a href="//home.cnblogs.com">园子</a>
-                    </li>
-                    <li>
-                    </li>
-                    <li id="clubHeader_liNews">
-                        <a id="clubHeader_lnkNews" title="IT新闻" class="current" href="/">新 闻</a>
-                    </li>
-                    <li>
-                        <a id="clubHeader_lkQuestionMenu" href="//q.cnblogs.com/">博问</a>
-                    </li>
-                    <li>
-                    </li>
-                    <li>
-                        <a id="clubHeader_lkIngMenu" href="//ing.cnblogs.com/">闪存</a>
-                    </li>
-                    <li>
-                        <a id="clubHeader_lnkWz" href="//wz.cnblogs.com/">收藏</a>
-                    </li>
-                    <li>
-                        <a href="https://brands.cnblogs.com/">专区</a>
-                    </li>
-                    <li>
-                        <a href="//kb.cnblogs.com">知识库</a>
-                    </li>
-                    <li id="clubHeader_liMyMessage">
-                    </li>
-                </ul>
-            </div>
-            <script type="text/javascript">
-                if (typeof (jQuery) != 'undefined') {
-                    GetUserInfo();
-                }
-            </script>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <div id="wrapper">
+<div id="header">
+
+<div id="top">
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/dstang2000/">拓荒者 dstang2000 <a href="http://www.dstang.com"><font size=-1 color=red>http://www.dstang.com</font></a>
+</h1>
+<div id="subtitle">KISS：Keeping things that work，Improve systems procedures styles，Start things of value，Stop things of no value </div>
+</div>
+<div id="sub"><div id="blog_stats_place_holder"><script>loadBlogStats();</script></div></div>
+
+
+
+
+</div>
+<div id="main_container">
+<div id="main_content">
+<div id="content">
+	<div id="post_detail">
+    <div class="post">
+        <h2>
+            
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dstang2000/archive/2005/10/08/250188.html">
+    <span>使用 NDoc 对 asp.net (Web) 项目产生文档的方法</span>
+    
+
+
+
+</a>
+
+        </h2>
+        <div class="postbody">
+            <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>NDoc是一个非常好的文档生成工具，现在还出了一些不错的中文版，如<br>破宝的<a href="http://www.percyboy.com/w/ndoc/">http://www.percyboy.com/w/ndoc/</a>。<br>但是由于NDoc现在的版本1.3 不支持Web项目，也不支持中文文件名，<br>下面提出一个临时性的解决办法</p>
+<p>1. 解决不认识http://的Web项目的问题<br>方法： <br>（1）将.csproj文件复制一份，其中将项目类型由“Web”改为“Local”<br>（2）将.sln复制一份，将其中的项目路径由<a href="http://localhost/xxxx">http://localhost/xxxx</a> 改为本地路径如 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c:/inetpub/wwwroot/xxxx ，并指向则才改过的.csproj文件。<br>然后用NDoc打开刚改过的.sln文件即可。<br><br>2. 解决不认识中文文件名、路径名的问题<br>解决方法：将.csproj用记事本打开，在最前面加上一行：<br>&lt;?xml version="1.0" encoding="utf-8" ?&gt; <br>然后另存（但文件名不变），但一定要将编码设为utf-8。<br>注意，如果项目保存则上面一行由vs.net去掉，则又得重新加上。<br><br>以上办法行得通，不过是临时的办法，<br>希望NDoc1.4中会解决这些问题。</p>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
         </div>
-        <div id="sideleft">
-    <div id="guide" style="display:none;">
-        <h3>
-            <a href="//www.cnblogs.com" title="程序员的网上家园">博客园</a> » <a href="/" title="IT新闻">新闻</a><span id="lbMobileAuditTips" style="display:none;"></span>
-        </h3>
+        <p class="postfoot">
+            posted on 
+<span id="post-date">2005-10-08 12:12</span>&nbsp;
+<a href="https://www.cnblogs.com/dstang2000/">拓荒者</a>&nbsp;
+阅读(<span id="post_view_count">1194</span>)&nbsp;
+评论(<span id="post_comment_count">3</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=250188" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(250188);return false;">收藏</a>
+        </p>
     </div>
-    <div id="navcontainer" class="floatright" style="padding-top: 1px;">
-        <ul id="navlist">
-            <li>
-                <a href="/" class="current">最新发布</a>
-            </li>
-            <li>
-                <a href="/n/recommend">推荐新闻</a>
-            </li>
-            <li>
-                <a href="/n/digg">热门新闻</a>
-            </li>
-            <li>
-                <a href="/n/comment">新闻评论</a>
-            </li>
-        </ul>
+</div>
+
+<script src="https://common.cnblogs.com/highlight/10.3.1/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 9986, cb_blogApp = 'dstang2000', cb_blogUserGuid = 'd796310b-63cf-dd11-9e4d-001cf0cd104b';
+    var cb_entryId = 250188, cb_entryCreatedDate = '2005-10-08 12:12', cb_postType = 1;
+    updatePostStats(
+        [cb_entryId],
+        function(id, count) { $("#post_view_count").text(count) },
+        function(id, count) { $("#post_comment_count").text(count) })
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+</script>
+<a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="under-post-card">
+        <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
     </div>
-    <div class="clear">
+    <div id="under_post_card1"></div>
+    <div id="cnblogs_c2" class="under-post-card">
+        <div id='div-gpt-ad-1592366332455-0' style='width: 468px; height: 60px;'></div>
     </div>
-    <div id="news_list">
-            <div class="news_block" id="entry_691689">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691689,'agree')">
-                        <span id="digg_num_691689" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691689" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691689/" target="_blank">B站回应招聘争议：向所有北邮师生表示诚恳的歉意</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_578.htm"><img src="https://img2018.cnblogs.com/news_topic/20190827110828316-1864502969.png" class="topic_img" alt=""/></a>
-                        腾讯科技讯，B站官方回应此前招聘争议，此次事件给北邮同学造成了困扰，公司向所有北邮师生表示诚恳的歉意。 B 站方面表示，根据公司对校招团队和面试员进行调查，确认本次招聘会存在安排欠妥、个别面试员表现不职业的问题，因此决定对本次招聘会的 HR 负责人和当事面试员进行严厉的批评和处罚。 以下为B站回应全
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691689#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">34 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/bilibili/" class="gray">bilibili</a> </span>
-                        发布于 <span class="gray">2021-04-25 18:18</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691687">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691687,'agree')">
-                        <span id="digg_num_691687" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691687" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691687/" target="_blank">嫦娥六号任务计划2024年前后实施，拟着陆南极盆地</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_1317.htm"><img src="https://img2018.cnblogs.com/news_topic/20181019115720199-66310872.png" class="topic_img" alt=""/></a>
-                        澎湃新闻记者谢瑞强 嫦娥六号探测器是嫦娥五号的备份，嫦娥六号任务计划在 2024 年前后实施，拟着陆月球背面“南极-艾特肯”盆地。 在 2021 年中国航天大会主论坛上，国家航天局探月与航天工程中心探月工程三期总设计师胡浩透露，嫦娥六号任务拟瞄准 2024 年前后，以着陆月球背面“南极-艾特肯”盆地
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691687#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">89 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E5%AB%A6%E5%A8%A5%E5%85%AD%E5%8F%B7/" class="gray">嫦娥六号</a> </span>
-                        发布于 <span class="gray">2021-04-25 16:50</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691686">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691686,'agree')">
-                        <span id="digg_num_691686" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691686" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691686/" target="_blank">比特大陆蚂蚁矿机E9公布：算力相当于32张RTX 3080</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_1333.htm"><img src="https://img2018.cnblogs.com/news_topic/20181126150008587-1154925016.png" class="topic_img" alt=""/></a>
-                        比特大陆日前公布预告，蚂蚁矿机以太坊 E9 即将正式登场。 核心参数方面，蚂蚁矿机 E9 的算力可达 3GH/s，官方宣称相当于 32 张 RTX 3080 显卡（94MH/s）。如果拿 120MH/s的 RTX 3090 来换算的话，那就是 25 张。拿 26MH/s的 NV 专业矿卡 CMP 3
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691686#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">171 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E6%AF%94%E7%89%B9%E5%A4%A7%E9%99%86/" class="gray">比特大陆</a> </span>
-                        发布于 <span class="gray">2021-04-25 16:34</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691685">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691685,'agree')">
-                        <span id="digg_num_691685" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691685" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691685/" target="_blank">腾讯视频起诉盗播获赔5千万，曝买&quot;权游&quot;终季版权花1亿美元</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_1307.htm"><img src="https://img2018.cnblogs.com/news_topic/20190813075120883-1628940042.png" class="topic_img" alt=""/></a>
-                        天眼查 App 显示，近日，深圳市腾讯计算机系统有限公司、腾讯科技（深圳）有限公司等与隆耀（天津）电子商务有限公司侵害商标权纠纷一审民事判决书公布，案号（2019）津 03 知民初 652 号，审理法院为天津市第三中级人民法院。原告为腾讯科技（深圳）有限公司等 3 家腾讯系公司，被告为隆耀（天津）电
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691685#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">128 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E8%85%BE%E8%AE%AF%E8%A7%86%E9%A2%91/" class="gray">腾讯视频</a> </span>
-                        发布于 <span class="gray">2021-04-25 16:25</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691684">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691684,'agree')">
-                        <span id="digg_num_691684" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691684" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691684/" target="_blank">“网红第一股”如涵上市两年突然退市：资本不吃这一套</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_1382.htm"><img src="https://img2018.cnblogs.com/news_topic/20190307130533820-980934913.png" class="topic_img" alt=""/></a>
-                        4 月 22 日上午，“网红第一股”如涵控股（RUHN.US）发布公告称其完成私有化，从美股退市。距风光登陆纳斯达克到“落寞”退市，仅仅过去了两年。 公开资料显示，如涵电商主打红人电商综合服务运营。作为网红电商最早的一批探索者，如涵通过在社交媒体上孵化网红，在积累了大量粉丝后，把流量引流到淘宝进行变
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691684#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">120 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E5%A6%82%E6%B6%B5/" class="gray">如涵</a> </span>
-                        发布于 <span class="gray">2021-04-25 16:12</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691683">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691683,'agree')">
-                        <span id="digg_num_691683" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691683" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691683/" target="_blank">更人性！高德地图上线竖屏版AR导航：支持几乎所有机型</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_554.htm"><img src="https://img2018.cnblogs.com/news_topic/20200108172617699-1616565948.png" class="topic_img" alt=""/></a>
-                        4 月 25 日，高德宣布竖屏版 AR 驾车导航上线，升级高德地图 V10.83 即可尝鲜，支持 iPhone 和安卓几乎所有机型。 相横屏版，竖屏版更熟悉的操作方式，更直观的导航指引，一键切换经典导航模式，用着更顺手。 高德表示，由于不需要变更手机方向，在驾车时使用竖屏版导航，用户可非常便捷地在经
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691683#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">137 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E9%AB%98%E5%BE%B7/" class="gray">高德</a> </span>
-                        发布于 <span class="gray">2021-04-25 16:08</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691682">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691682,'agree')">
-                        <span id="digg_num_691682" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691682" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691682/" target="_blank">三星前掌门人留下22万亿遗产！家人为12万亿遗产税犯愁：贷款分期缴纳</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_251.htm"><img src="https://img2018.cnblogs.com/news_topic/20190906161325617-1698330440.png" class="topic_img" alt=""/></a>
-                        作为韩国三星集团前掌门人，李健熙死后留下的巨额财产成为了人们关注的话题。 据外媒报道，三星集团的前会长李健熙的亲属计划于本周发布声明，来具体说明他们继承财产所需要缴纳的遗产税应该如何缴纳。 李健熙作为韩国首富，2014 年发生了心梗，之后就长期昏迷住院，最终于 2020 年 10 月 25 日去世，
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691682#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">134 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E4%B8%89%E6%98%9F/" class="gray">三星</a> </span>
-                        发布于 <span class="gray">2021-04-25 16:00</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691681">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691681,'agree')">
-                        <span id="digg_num_691681" class="diggnum">1</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691681" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691681/" target="_blank">《神秘的程序员们》漫画89~93：“人人都喜欢的简单方案”</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_335.htm"><img src="//images0.cnblogs.com/news_topic/programmer.jpg" class="topic_img" alt=""/></a>
-                        “人人都喜欢的简单方案” 一年没见了，希望大家在这个多事之年一切都安好。我很好，今年读了很多书，重新捡起笔画画（纸上那种），还玩会了视频的拍摄、剪辑跟后期。在 Youtube 上试了好几种不同类型的内容（还没有太成功的）。 段子原创来自 响马（西祠胡同\孢子\FIBOS 创始人）已获改编授权。
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691681#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">120 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E7%A5%9E%E7%A7%98%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%91%98%E4%BB%AC/" class="gray">神秘的程序员们</a> </span>
-                        发布于 <span class="gray">2021-04-25 15:50</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691680">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691680,'agree')">
-                        <span id="digg_num_691680" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691680" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691680/" target="_blank">英特尔出了一季度财报，对手笑了</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_12.htm"><img src="https://img2020.cnblogs.com/news_topic/20200904145804003-48293503.png" class="topic_img" alt=""/></a>
-                        文/林克 来源：吴晓波频道（ID:wuxiaobopd） 4 月 23 日，全球芯片产业龙头企业之一的英特尔公布了 2021 财年第一季度的财报，净利润 33.61 亿美元，同比下滑了 41%，低于市场预期。于是一开市，股价就暴跌了7%。 受此消息刺激，英特尔的老对手、近两年来风头正劲 AMD，开盘
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691680#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">104 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E8%8B%B1%E7%89%B9%E5%B0%94/" class="gray">英特尔</a> </span>
-                        发布于 <span class="gray">2021-04-25 15:35</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691679">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691679,'agree')">
-                        <span id="digg_num_691679" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691679" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691679/" target="_blank">买了“电动爹” 走上维权路</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_429.htm"><img src="https://img2020.cnblogs.com/news_topic/20200919095456914-256019808.png" class="topic_img" alt=""/></a>
-                        文/李秋涵黎明魏婕唐亚华周继凤王敏 来源：深燃（ID：shenrancaijing） 上海车展特斯拉车主维权事件还在持续发酵。最新进展是，特斯对外公布了涉事车辆在事故发生前 30 分钟的行驶数据。对此，维权车主的丈夫李先生表示，特斯拉侵犯个人隐私，要求撤销数据并道歉。 这一事件的最终结果尚无定论，但
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691679#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">91 人浏览</span>
-                        
-                        发布于 <span class="gray">2021-04-25 15:22</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691678">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691678,'agree')">
-                        <span id="digg_num_691678" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691678" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691678/" target="_blank">哈啰的有限游戏</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_1576.htm"><img src="https://img2018.cnblogs.com/news_topic/20190911171228982-274732157.png" class="topic_img" alt=""/></a>
-                        文/ 冯羽 来源：子弹财经（ID：wwwhygc） 最近，“共享出行第一股”的竞争似乎颇为激烈，前有嘀嗒、滴滴即将在港股 IPO 的消息，后有哈啰出行被爆出秘密赴美上市。 4 月 24 日，靴子终于落地——哈啰出行向美国 SEC 提交了招股书，拟于纳斯达克上市，计划通过 IPO 筹集至多 1 亿美元
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691678#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">48 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E5%93%88%E5%95%B0/" class="gray">哈啰</a> </span>
-                        发布于 <span class="gray">2021-04-25 15:06</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691677">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691677,'agree')">
-                        <span id="digg_num_691677" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691677" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691677/" target="_blank">快手要跟B站拼年轻</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_793.htm"><img src="//images2015.cnblogs.com/news_topic/20161222123753807-514279725.png" class="topic_img" alt=""/></a>
-                        文/蒋晓婷 来源：字母榜（ID：wujicaijing） 在日前举行的快手光合创作者大会上，快手二次元运营负责人汇报了一个特别的数据：2 年内用户规模增长 150%，二次元日活跃用户突破 1 亿。单看没什么大不了，但如果比照 2020 年快手平均日活 2.646 亿来算就会发现——每三个快手用户，至
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691677#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">43 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E5%BF%AB%E6%89%8B/" class="gray">快手</a> <a href="/n/tag/bilibili/" class="gray">bilibili</a> </span>
-                        发布于 <span class="gray">2021-04-25 14:50</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691676">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691676,'agree')">
-                        <span id="digg_num_691676" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691676" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691676/" target="_blank">我在抖音做电商：是赚是赔，往往取决于几分钱的算计</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_1052.htm"><img src="//images2017.cnblogs.com/news_topic/20171101134406420-1311715331.png" class="topic_img" alt=""/></a>
-                        文/闫俊文 来源：燃次元（ID：chaintruth） 618 招商倒计时，推出抖音商城……在 4 月 8 日举办首届生态大会后，抖音电商的发展开始提速。 去年，抖音电商官网和抖店先后上线，抖音电商官网的 slogan 是“用户发现并获得好物的优选平台”，抖店则是抖音电商入驻平台。现在打开网站，首推
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691676#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">49 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E6%8A%96%E9%9F%B3/" class="gray">抖音</a> </span>
-                        发布于 <span class="gray">2021-04-25 14:26</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691675">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691675,'agree')">
-                        <span id="digg_num_691675" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691675" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691675/" target="_blank">5G无用？其未来对于互联网的颠覆可能将更加疯狂</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_1392.htm"><img src="https://img2018.cnblogs.com/news_topic/20190402133849399-1117982141.jpg" class="topic_img" alt=""/></a>
-                        文/王敏 来源：深燃（ID：shenrancaijing） “我一直认为 5G 的作用被夸大了”，在 4 月 12 日的华为全球分析师大会上，华为轮值董事长徐直军这样说道，直接给一度火热的 5G 发展泼了一盆冷水。 他表示，大家讨论的重点往往是 5G 时代，而并非 5G 技术本身。另外，他对于 6G
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691675#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">47 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/5G/" class="gray">5G</a> </span>
-                        发布于 <span class="gray">2021-04-25 14:08</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691674">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691674,'agree')">
-                        <span id="digg_num_691674" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691674" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691674/" target="_blank">转转集团 &amp; 快手电商直播战报：单场带货二手3C超7500万元</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_910.htm"><img src="//images2015.cnblogs.com/news_topic/20170526082335544-1119694478.png" class="topic_img" alt=""/></a>
-                        4 月 25 日消息，昨晚，快手电商携手转转集团联合推出超级品牌日直播大促，明星孙艺洲和小沈龙助阵带货，当晚在转转官方直播间卖出了 61500 多单二手 3C 商品，累计下单销售额超过 7500 万元。 据悉，本次联合直播带货，也创出了二手 3C 商品在短视频电商平台单场直播带货的最高销售纪录。 本
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691674#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">146 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E8%BD%AC%E8%BD%AC/" class="gray">转转</a> <a href="/n/tag/%E5%BF%AB%E6%89%8B/" class="gray">快手</a> </span>
-                        发布于 <span class="gray">2021-04-25 13:50</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691661">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691661,'agree')">
-                        <span id="digg_num_691661" class="diggnum">1</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691661" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691661/" target="_blank">“赤脚”马斯克成“油腻大叔”：火星探索会死人，不是富人的逃生通道！</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_570.htm"><img src="//images0.cnblogs.com/news_topic/20150702090016187.png" class="topic_img" alt=""/></a>
-                        文/yaxin 来源：新智元（ID：AI_era） 马斯克的出场总是会给人惊喜！ 周五，这位“赤脚大叔”与 XPrize 主席 Peter Diamandis 进行了一场户外直播。 直播中，马斯克谈到火星探索时称，他的目标是通过 SpaceX 发射火箭将人类运送到火星，并在那里殖民。 “火星探索并不
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691661#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">302 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E9%A9%AC%E6%96%AF%E5%85%8B/" class="gray">马斯克</a> </span>
-                        发布于 <span class="gray">2021-04-25 13:40</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691673">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691673,'agree')">
-                        <span id="digg_num_691673" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691673" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691673/" target="_blank">Edge优化PDF阅读体验：引入继续阅读、改进滚动等等</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_539.htm"><img src="//images0.cnblogs.com/news_topic/20150430112927068.png" class="topic_img" alt=""/></a>
-                        经典版 Edge 是 Windows 10 系统中优秀的 PDF 阅读器之一。虽然很多特性已经迁移到基于 Chromium 的新版 Edge，但依然有不少功能需要完善和补充。在今年晚些时候到来的 Edge 新版本中，微软将会赋予该浏览器更多的 PDF 阅读功能，包括： ● 继续阅读 在新版 Edge
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691673#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">105 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/Edge/" class="gray">Edge</a> </span>
-                        发布于 <span class="gray">2021-04-25 13:28</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691671">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691671,'agree')">
-                        <span id="digg_num_691671" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691671" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691671/" target="_blank">员工曝自掏腰包补贴商户？街电否认</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_1223.htm"><img src="https://images2018.cnblogs.com/news_topic/20180528223143375-548615090.png" class="topic_img" alt=""/></a>
-                        近日，共享充电宝知名企业深圳街电科技有限公司（下称“街电”）有员工向南都记者爆料称，街电账目不透明，导致商户的分成和销售人员的提成减少。销售人员在收入受损的情况下，还需要自掏腰包补贴商户，否则机器会被扣押。 街电则予以坚决否认。街电公关人士对南都记者回应称，街电按照国家规定合法合规经营，不存在上述问
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691671#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">119 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E8%A1%97%E7%94%B5/" class="gray">街电</a> </span>
-                        发布于 <span class="gray">2021-04-25 13:21</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691672">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691672,'agree')">
-                        <span id="digg_num_691672" class="diggnum">1</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691672" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691672/" target="_blank">余承东掌舵华为云首秀：甩6大重磅技术 目标直指阿里腾讯</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_188.htm"><img src="https://img2018.cnblogs.com/news_topic/20190730153501178-1904121953.png" class="topic_img" alt=""/></a>
-                        阿里云的真正敌人来了！华为突围 2021 中国云服务市场。4 月 25 日消息，在今天上午的华为开发者大会 2021（Cloud）主题演讲上，华为常务董事、华为云 CEO、消费者业务 CEO 余承东进行了掌舵云业务以来的首次重要演讲，发布了华为云的六大新技术： ・华为云 CCE Turbo—— 以容
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691672#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">248 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E5%8D%8E%E4%B8%BA%E4%BA%91/" class="gray">华为云</a> </span>
-                        发布于 <span class="gray">2021-04-25 13:08</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691670">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691670,'agree')">
-                        <span id="digg_num_691670" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691670" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691670/" target="_blank">完整的8号染色体序列揭示了新的基因及与其关联的疾病风险</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_319.htm"><img src="https://img2018.cnblogs.com/news_topic/20181019121101783-952728829.gif" class="topic_img" alt=""/></a>
-                        《自然》杂志报道了人类 8 号染色体的完整组合。 论文的标题是 &quot;完整的 8 号染色体的结构、功能和进化&quot;。虽然从外表上看，这条染色体很典型，不短不长也没有什么特别之处，但是它的 DNA 内容和排列在灵长类动物和人类的进化、一些免疫和发育疾病以及一般的染色体测序结构和功能方面都有意义。 这种线性组合
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691670#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">105 人浏览</span>
-                        
-                        发布于 <span class="gray">2021-04-25 12:55</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691669">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691669,'agree')">
-                        <span id="digg_num_691669" class="diggnum">1</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691669" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691669/" target="_blank">B站校招卷入歧视风波：当事人两度“澄清” 北邮学生要求道歉</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_578.htm"><img src="https://img2018.cnblogs.com/news_topic/20190827110828316-1864502969.png" class="topic_img" alt=""/></a>
-                        被曝校招歧视，B站又一次登上了热搜榜。据知乎贴，在北京邮电大学的校招过程中，B站面试官发表了一系列争议言论，涉及炫耀资产、贬低应试者，并在面试结束后拉黑面试者，甚至深夜拨打电话要求涉事同学删除内网论坛帖子。 该帖一出即引发热议，在跟帖中，有认证为北邮的学生贴出聊天记录指出，不止一位同学在面试时有类似
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691669#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">362 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/bilibili/" class="gray">bilibili</a> </span>
-                        发布于 <span class="gray">2021-04-25 12:48</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691668">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691668,'agree')">
-                        <span id="digg_num_691668" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691668" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691668/" target="_blank">宁可违规 司机为什么停不下来？</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_132.htm"><img src="//images0.cnblogs.com/news_topic/ITblog.jpg" class="topic_img" alt=""/></a>
-                        中国的物流行业蓬勃发展，但作为主要劳动力的货车司机为什么生存越来越难了？ 真正的问题 15 分钟，51 岁的金德强在车上写好的遗书，让“货车司机”这个庞大群体再次进入公众视野。 4 月 5 日之后的时间里，人们都知道了：一位河北的货车司机因为“北斗系统掉线”被罚款 2000 元，而服毒自杀。与这个世
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691668#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">301 人浏览</span>
-                        
-                        发布于 <span class="gray">2021-04-25 12:36</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691667">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691667,'agree')">
-                        <span id="digg_num_691667" class="diggnum">1</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691667" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691667/" target="_blank">京东官宣全新吉祥物：牛方方 省钱高手</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_228.htm"><img src="https://img2020.cnblogs.com/news_topic/20201208132010351-1874988488.png" class="topic_img" alt=""/></a>
-                        4 月 25 日，京东宣布，京东吉祥物 JOY 有了新朋友，它就是旗下京喜品牌的吉祥物牛方方。未来大家不但可以说“狗东”，还能说“牛东”了。 官方称其“既是顾家达人又是省钱高手，既认真工作也努力生活，优点多到盘不过来”。 目前，方牛牛只露出了背面，明显比 JOY 高一个头。牛如其名，方牛牛身材看起来
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691667#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">250 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E4%BA%AC%E4%B8%9C/" class="gray">京东</a> </span>
-                        发布于 <span class="gray">2021-04-25 12:24</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691666">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691666,'agree')">
-                        <span id="digg_num_691666" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691666" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691666/" target="_blank">微信检测好友删除要来了？腾讯公开“单向好友检测”专利</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_372.htm"><img src="https://img2018.cnblogs.com/news_topic/20191011113837921-1266267629.png" class="topic_img" alt=""/></a>
-                        微信被删除好友，并不会收到任何提醒，往往等到向对方发消息时才会发现。以往，不少人通过建群的方式查看被谁删除了好友关系，比较繁琐，而且一旦失手在群里发送消息，这个群就真正建成了，比较尴尬。 腾讯最新申请了一项专利，似乎就是为此而生的。 据天眼查 APP 显示，4 月 23 日，腾讯科技（深圳）有限公司
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691666#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">317 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E5%BE%AE%E4%BF%A1/" class="gray">微信</a> </span>
-                        发布于 <span class="gray">2021-04-25 12:12</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691665">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691665,'agree')">
-                        <span id="digg_num_691665" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691665" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691665/" target="_blank">中国天眼为什么这么强？南仁东放弃300倍薪资回国造天眼</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_1317.htm"><img src="https://img2018.cnblogs.com/news_topic/20181019115720199-66310872.png" class="topic_img" alt=""/></a>
-                        “中国天眼”是目前世界上最大、最灵敏的单口径射电望远镜，能够接收到 100 多亿光年以外的电磁信号。 自 2020 年 1 月对国内开放运行以来，这一具有我国自主知识产权的重大科研基础设施，运行稳定可靠，已发现 300 余颗脉冲星，并在快速射电暴等研究领域取得重大突破。 资料显示，FAST 由我国已
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691665#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">159 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/FAST/" class="gray">FAST</a> </span>
-                        发布于 <span class="gray">2021-04-25 12:00</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691664">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691664,'agree')">
-                        <span id="digg_num_691664" class="diggnum">1</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691664" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691664/" target="_blank">靠着自动扣费就月入百万？iPhone里的一些坑你该知道</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_2701.htm"><img src="https://img2020.cnblogs.com/news_topic/20201014080642059-2004228935.png" class="topic_img" alt=""/></a>
-                        差友们好，想必在大家的印象中，一个手机 App 能冲上付费排行榜，那肯定是有它的过人之处，才会有这么多人愿意为它买单。 同样，应用开发者要对某个功能收费，那自然这个功能很强大，值得人们为它付费。 但，在 iOS 端付费应用和付费功能上，还是有一些小门道要和大家盘一盘的。 事情是这样的，那天世超看到一
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691664#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">461 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/iPhone/" class="gray">iPhone</a> </span>
-                        发布于 <span class="gray">2021-04-25 11:50</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691663">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691663,'agree')">
-                        <span id="digg_num_691663" class="diggnum">2</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691663" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691663/" target="_blank">曹光彪名下全部财产捐赠清华：110周年校庆一份厚重礼物</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_591.htm"><img src="//images0.cnblogs.com/news_topic/20150714183155407.png" class="topic_img" alt=""/></a>
-                        2021 年 4 月 25 日是清华大学建校 110 周年校庆，各类形式多样的庆祝纪念活动纷纷呈现。 据报道，110 周年前夕，企业家、香港永新企业有限公司创始人曹光彪先生离世，享年 101 岁。其临终寄托提到要将自己名下的财产全部捐赠清华，助力清华为服务国家富强、民族复兴、人民幸福贡献力量。 收到
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691663#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">878 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E6%9B%B9%E5%85%89%E5%BD%AA/" class="gray">曹光彪</a> </span>
-                        发布于 <span class="gray">2021-04-25 11:40</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691662">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691662,'agree')">
-                        <span id="digg_num_691662" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691662" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691662/" target="_blank">澳洲赖特自称比特币发明者 伦敦高院允许其为版权索赔</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_424.htm"><img src="https://img2020.cnblogs.com/news_topic/20201127175718159-1044964558.png" class="topic_img" alt=""/></a>
-                        近日据外媒报道，伦敦高等法院允许一位声称自己创造了比特币的澳大利亚计算机科学家克雷格赖特(Craig Wright)，对 bitcoin.org 网站运营商和出版商提起侵犯版权相关的诉讼。被告方自称为眼镜蛇(Cobra)。 尽管此案被告可能居住在国外，并且不知道具体的姓名、身份或地址，但赖特可以继续
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691662#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">209 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E6%AF%94%E7%89%B9%E5%B8%81/" class="gray">比特币</a> </span>
-                        发布于 <span class="gray">2021-04-25 11:30</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691660">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691660,'agree')">
-                        <span id="digg_num_691660" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691660" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691660/" target="_blank">水滴何以聚成大海？</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_1388.htm"><img src="https://img2020.cnblogs.com/news_topic/20200901151934256-871654616.png" class="topic_img" alt=""/></a>
-                        文/张艺 来源：商业数据派（ID：business-data） 招股书未至，反对声先行，水滴公司（以下简称“水滴”）的 IPO 之路充斥着坎坷。 4 月 16 日，水滴向美国证券交易委员会递交了招股书，计划在纽交所挂牌上市。此次上市暂定筹资额为 1 亿美元，水滴最新估值达百亿美金。 但就在前一天，路
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691660#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">216 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E6%B0%B4%E6%BB%B4/" class="gray">水滴</a> </span>
-                        发布于 <span class="gray">2021-04-25 11:11</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-            <div class="news_block" id="entry_691659">
-                <div class="action">
-                    <div class="diggit" onclick="VoteNews(691659,'agree')">
-                        <span id="digg_num_691659" class="diggnum">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_691659" class="digg-tip"></div>
-                </div>
-                <!--end: action -->
-                <div class="content">
-                    <h2 class="news_entry">
-                        <a href="/n/691659/" target="_blank">哈啰出行冲刺美股：年营收60亿 蚂蚁集团持股36.3%</a>
-                    </h2>
-                    <div class="entry_summary" style="display: block;">
-                        <a href="/n/topic_1576.htm"><img src="https://img2018.cnblogs.com/news_topic/20190911171228982-274732157.png" class="topic_img" alt=""/></a>
-                        文/雷建平 来源：雷帝触网（ID： touchweb） 哈啰出行今日向美国 SEC 递交招股书，准备在美国纳斯达克上市。此前，市场传闻，哈啰出行准备募资 10 亿美元。 哈啰出行最早是共享单车市场的概念，但如今已不再只是共享单车。 年营收达 60 亿 哈啰出行于 2016 年 9 月在上海成立，从用
-                    </div>
-                    <div class="entry_footer">
-                        <a href="//home.cnblogs.com/u/itwriter/" class="gray" target="_blank">
-                            itwriter
-                        </a>投递&nbsp;
-                        <span class="comment">
-                            <a href="/n/691659#comment" class="gray" target="_blank">评论(0)</a>
-                        </span><span class="view">264 人浏览</span>
-                        <span class="tag"> <a href="/n/tag/%E5%93%88%E5%95%B0/" class="gray">哈啰</a> </span>
-                        发布于 <span class="gray">2021-04-25 11:11</span>
-                    </div>
-                    <!--end: entry_footer -->
-                </div>
-                <!--end: content -->
-                <div class="clear">
-                </div>
-            </div>
-            <!--end: news_block -->
-            <div class="clear">
-            </div>
-    </div>
-    <div class="pager"><a href="/" class="p_1 current">1</a><a href="/n/page/2/" class="p_2 middle">2</a><a href="/n/page/3/" class="p_3 middle">3</a><a href="/n/page/4/" class="p_4 middle">4</a><a href="/n/page/5/" class="p_5 middle">5</a><a href="/n/page/6/" class="p_6 middle">6</a><a href="/n/page/7/" class="p_7 middle">7</a><a href="/n/page/8/" class="p_8 middle">8</a><a href="/n/page/9/" class="p_9 middle">9</a><span class="ellipsis">···</span><a href="/n/page/100/" class="p_100 last">100</a><a href="/n/page/2/">Next &gt;</a></div>
+    <div id="under_post_card2"></div>
+    <div id="HistoryToday" class="under-post-card"></div>
+    <script type="text/javascript">
+       var commentManager = new blogCommentManager();
+       commentManager.renderComments(0);
+       fixPostBody();
+       deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);       deliverT2();
+       deliverC1C2();
+       loadNewsAndKb();
+       loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);       LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+       GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+       loadOptUnderPost();
+       GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
 </div>
 
 
-<script type="text/javascript">
-    $(function () {
-        LoadNewsCategory("NewsCategoryId",11,0);
-        //新闻列表-右侧编辑推荐新闻
-        CommonLoadNews("/NewsAjax/GetRecommendNews", "RecommendNewsId", 7);
-        //新闻列表-右侧今日新闻排行
-        CommonLoadNews("/NewsAjax/GetHotNews", "HotNewsId", 10);
-        //新闻列表-右侧24小时推荐排行
-        CommonLoadNews("/NewsAjax/GetHotByDiggCount", "HotByDiggCountId", 7);
-        //新闻列表-右侧热门IT新闻
-        CommonLoadNews("/NewsAjax/GetRecentHotNews", "RecentHotNewsId", 10);
-        //新闻列表-右侧最新评论
-        LoadSideComments("NewsIndexCommentsId", 15);
-        CheckAudit();
-        LoadIndexSideInfo();
-    });
-</script>
-        <div id="sideright">
-            
-    <div style="margin-top:25px;">
-        <span id="lbAuditTips" style="display:none;"></span>
-        <div class="news_home_navlink">
-            <div id="rss_sub_top" class="rss_sub">
-                <a href="http://feed.cnblogs.com/news/rss" title="博客园IT新闻RSS订阅">
-                    <img src="//common.cnblogs.com/images/icon_rss.gif" alt="RSS订阅" />
-                </a>
-            </div>
-            <div style="line-height:30px;">
-                &gt; <a href="https://www.cnblogs.com/news/" class="big">新闻栏目</a><br />
-                &gt; <a href="/n/date/" class="big">新闻日历</a><br />
-                &gt; <a href="/n/topiclist/" class="big">新闻主题</a><br />
-            </div>
-        </div>
-        <div class="clear">
-        </div>
-        <br />
-        <div id="side_right_search">
-            <input type="text" id="google_search_q" size="27" class="side_right_search_q" onkeydown="return google_search_enter(event);" />
-            <input type="submit" name="sa" value="搜索新闻" class="side_right_search_sa" onclick="return google_search();" />
-        </div>
-<div class="side_block">
-    <div class="a4content" id="e2">
-        <div id="div-gpt-ad-1533633736227-1" style="height:250px; width:300px;">
-            <script>
-                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1533633736227-1'); });
-            </script>
-        </div>
-    </div>
-</div>        <div class="side_block" id="cate_news">
-            <h3 class="title_yellow">
-                新闻类别
-            </h3>
-            <div class="indent" id="NewsCategoryId">
-            </div>
-        </div>
-        <div id="HotNews1_panelToday">
-            <div class="side_block" id="last_news">
-                <h3 class="title_blue">
-                    今日新闻排行
-                </h3>
-                <ul class="topnews block_list bt" id="HotNewsId">
-                </ul>
-            </div>
-        </div>
-        <div class="side_block">
-            <h3 class="title_yellow">
-                编辑推荐新闻
-            </h3>
-            <ul class="topnews block_list bt" id="RecommendNewsId">
-            </ul>
-        </div>
-        <div id="HotNews1_panelDiggTop">
-            <div class="side_block" id="Div1">
-                <h3 class="title_green">
-                    24小时推荐排行
-                </h3>
-                <ul class="topnews block_list bt" id="HotByDiggCountId">
-                </ul>
-            </div>
-        </div>
-        <div class="side_block" id="hot_news">
-            <h3 class="title_red">
-                热门IT新闻
-            </h3>
-            <ul class="topnews block_list bt" id="RecentHotNewsId">
-            </ul>
-        </div>
-<div class="side_block">
-    <div id="e3">
-        <div id="div-gpt-ad-1533633736227-2" style="height:250px; width:300px;">
-            <script>
-                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1533633736227-2'); });
-            </script>
-        </div>
-    </div>
-</div>        <div class="side_block">
-            <h3 class="title_green">
-                最新评论
-            </h3>
-            <ul class="block_list" id="NewsIndexCommentsId">
-            </ul>
-            <a href="/Comment">
-                <img src="/Images/more_comment.gif" title="更多最新评论" style="float: right; margin: 7px;" alt="" />
-            </a>
-            <div style="clear: both;">
-            </div>
-        </div>
-        <a name="more"></a>
-        <div id="rss_sub_bottom" class="rss_sub">
-            <a href="http://feed.cnblogs.com/news/rss" title="博客园IT新闻RSS订阅">
-                <img src="//common.cnblogs.com/images/icon_rss_news.gif" alt="RSS订阅" />
-            </a>
-            <a href="//news.cnblogs.com/m" rel="nofollow" title="博客园新闻频道手机版">
-                <img src="/Images/ico_ing_cellphone.gif" alt="手机版" />
-            </a>
-        </div>
-    </div>
 
-        </div>
-        <div class="clear">
-        </div>
-        <div id="footer">
-            <div id="foot">
-                <a href="//www.cnblogs.com/AboutUS.aspx">关于博客园</a>
-                <a href="//www.cnblogs.com/ContactUs.aspx">联系我们</a>
-                <a href="//www.cnblogs.com/ad.aspx">广告服务</a>
-                <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备09004260号-1</a>
-                <span>&copy;2004-2021</span>
-                <a href="//www.cnblogs.com">博客园</a>
-                <span id="powered_by">Powered by .NET on Kubernetes</span>
-            </div>
-            <div id="footMobile" style="display:none;">
-                <span>&copy;2004-2021</span>&nbsp;<a href="//www.cnblogs.com">博客园</a>
-            </div>
-        </div>
-        <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-476124-8']);
-            _gaq.push(['_trackPageview']);
-            (function () {
-                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })();
-        </script>
-    </div>
+</div>
+</div>
+<div id="leftmenu">
+
+
+<h3>导航</h3>
+<ul>
+    <li>
+        <a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/dstang2000/">
+首页</a>
+
+    </li>
+    <li>
+        
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+
+    </li>
+    <li>
+        
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%8B%93%E8%8D%92%E8%80%85">
+联系</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/dstang2000/rss/">
+订阅</a>
+        
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/dstang2000/rss/">
+    <img src="/skins/anothereon001/images/xml.gif" alt="订阅" />
+</a>
+    </li>
+    <li>
+        
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+    </li>
+</ul>
+
+
+<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>
+<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+
+</div>
+</div>
+<div class="clear"></div>
+<div id="footer">
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a href="https://www.cnblogs.com/" id="footer_site_link">博客园</a>
+	<br />
+	Copyright &copy; 2021 拓荒者
+<br /><span id="poweredby">Powered by .NET 5.0 on Kubernetes</span>
+
+</p>
+
+
+</div>
+</div>
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjvaOW8ril6qM0JskxnasFYdsJHLv-Q_re2RatYZJ6sJgqcY0nBai7-yPIglGLPR5NAYjjqmjSe1ko5daQWBgue7jaqBru2PHsqgNYrH6oeZvKMF3g7WyYuxGCeFXtVZR-s" />
 </body>
 </html>

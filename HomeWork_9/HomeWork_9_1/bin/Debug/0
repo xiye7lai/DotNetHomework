@@ -30,22 +30,13 @@
         var visitorUserId = '';
     </script>
     <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
-    <script src="/js/blog-common.min.js?v=CJtNAb53Ex2fBes_h70ZUTUv5aZTxcvvM7mCnA44svE"></script>
+    <script src="/js/blog-common.min.js?v=yJQaJ16S00coMfzvh-NgF2zm2J87f5VfNamFdsnKHrc"></script>
     
     
     
 </head>
-<body class="has-navbar has-bannerbar">
+<body class="has-navbar">
     <a name="top"></a>
-        <a target="_blank" href="https://www.aliyun.com/minisite/goods?userCode=swh7dvlt" onclick="ga('send', 'event', 'Link', 'click', 'aliyun-cps-blog-bannerbar-pc')">
-            <div class="bannerbar aliyun forpc" style="background-size: contain;background-image: url(https://img2020.cnblogs.com/blog/35695/202104/35695-20210428221933214-737067094.jpg)">
-            </div>
-        </a>
-        <div id="bannerbar" class="bannerbar-mobile formobile">
-            <a href="https://www.aliyun.com/minisite/goods?userCode=swh7dvlt" target="_blank" onclick="ga('send', 'event', 'Link', 'click', 'aliyun-cps-blog-bannerbar-mobile')">
-                <img src="https://img2020.cnblogs.com/blog/35695/202104/35695-20210428213541700-642740375.jpg" alt="" />
-            </a>
-        </div>
     <div id="top_nav" class="navbar forpc">
         <nav id="nav_main" class="navbar-main">
             <ul id="nav_left" class="navbar-list navbar-left">
@@ -155,7 +146,7 @@
         <p class="postfoot">
             posted @ 2010-11-02 17:43
 拓荒者
-<span data-post-id="1867406" class="post-view-count">阅读(954)</span> 
+<span data-post-id="1867406" class="post-view-count">阅读(971)</span> 
 <span data-post-id="1867406" class="post-comment-count">评论(0)</span> 
 <span data-post-id="1867406" class="post-digg-count">推荐(0)</span> 
 <a href="https://i.cnblogs.com/EditPosts.aspx?postid=1867406" rel="nofollow">
@@ -199,7 +190,7 @@
         <p class="postfoot">
             posted @ 2005-10-08 12:12
 拓荒者
-<span data-post-id="250188" class="post-view-count">阅读(1186)</span> 
+<span data-post-id="250188" class="post-view-count">阅读(1194)</span> 
 <span data-post-id="250188" class="post-comment-count">评论(3)</span> 
 <span data-post-id="250188" class="post-digg-count">推荐(0)</span> 
 <a href="https://i.cnblogs.com/EditPosts.aspx?postid=250188" rel="nofollow">
@@ -243,7 +234,7 @@
         <p class="postfoot">
             posted @ 2005-03-06 00:56
 拓荒者
-<span data-post-id="113761" class="post-view-count">阅读(1575)</span> 
+<span data-post-id="113761" class="post-view-count">阅读(1580)</span> 
 <span data-post-id="113761" class="post-comment-count">评论(5)</span> 
 <span data-post-id="113761" class="post-digg-count">推荐(0)</span> 
 <a href="https://i.cnblogs.com/EditPosts.aspx?postid=113761" rel="nofollow">
@@ -287,7 +278,7 @@
         <p class="postfoot">
             posted @ 2005-03-05 14:45
 拓荒者
-<span data-post-id="113513" class="post-view-count">阅读(2651)</span> 
+<span data-post-id="113513" class="post-view-count">阅读(2656)</span> 
 <span data-post-id="113513" class="post-comment-count">评论(5)</span> 
 <span data-post-id="113513" class="post-digg-count">推荐(1)</span> 
 <a href="https://i.cnblogs.com/EditPosts.aspx?postid=113513" rel="nofollow">
@@ -397,6 +388,6 @@
 
     
 
-    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjvjmiPHlYx9aBr-gocnOQIg5ncZQnJJH0JuTJmvgNvGBJXQH4xb5c7LfihfvfYWm4OZ4ewvwbvmeBbXXb0S7TFuLJdqyslHmheQzg2C_Kw35OxNbJslaXbP_9ugoYqLwKM" />
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjs0_tCavyh8Pa2b_W9mB1dIeVZR8AAf1jeqqADnpDB-NdAQKi4IW2TfTXOOGS30q8x7llm3ejdiIkjKJ3MUdZbVGd2ea5DElA4LMfFZpELHBro9cJZKI8flQ8sd88F25HU" />
 </body>
 </html>

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,47 +14,61 @@ namespace HomeWork_9_1
 {
     public partial class Form1 : Form
     {
+        public BindingSource inforBindingSource;
+        public bool crawling;
         public SimpleCrawler myCrawler;
-        public Thread thread;
-        bool crawling;
         public Form1()
         {
             InitializeComponent();
             myCrawler = new SimpleCrawler();
             crawling = false;
+            inforBindingSource = new BindingSource();
+            dataGridView1.DataSource = inforBindingSource;
+            dataGridView1.AutoResizeColumns();
+            myCrawler.PageDownloaded += Crawler_PageDownloaded;
+            myCrawler.CrawlerStopped += Crawler_CrawlerStopped;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Crawler_CrawlerStopped(SimpleCrawler obj)
         {
-            crawling = true;
-            thread = new Thread(myCrawler.Crawl);
-            thread.Start(textBox1.Text);
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            richTextBox1.Text = myCrawler.Infor;
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (button2.Text == "暂停爬取")
+            Action action = () => { label1.Text = "爬虫已停止";  };
+            if (this.InvokeRequired)
             {
-                crawling = false;
-                thread.Suspend();
-                button2.Text = "继续爬取";
+                this.Invoke(action);
             }
-            else if (button2.Text == "继续爬取")
+            else
             {
-                crawling = true;
-                thread.Resume();
-                button2.Text = "暂停爬取";
+                action();
+            }
+            
+        }
+
+        private void Crawler_PageDownloaded(SimpleCrawler crawler, string url, string info)
+        {
+            var pageInfo = new { Index = inforBindingSource.Count + 1, URL = url, Status = info };
+            Action action = () => { inforBindingSource.Add(pageInfo); dataGridView1.AutoResizeColumns(); };
+            if (this.InvokeRequired)
+            {
+                this.Invoke(action);
+            }
+            else
+            {
+                action();
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void startbutton_Click(object sender, EventArgs e)
         {
-            thread.Abort();
+            inforBindingSource.Clear();
+            myCrawler.StartURL = textBox1.Text;
+
+            Match match = Regex.Match(myCrawler.StartURL, SimpleCrawler.urlParseRegex);
+            if (match.Length == 0) return;
+            string host = match.Groups["host"].Value;
+            myCrawler.HostFilter = "^" + host + "$";
+            myCrawler.FileFilter = "((.html?|.aspx|.jsp|.php)$|^[^.]+$)";
+            new Thread(myCrawler.Start).Start();
+            label1.Text = "爬虫已启动....";
         }
     }
 }
