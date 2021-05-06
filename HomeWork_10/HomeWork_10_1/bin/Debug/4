@@ -9,7 +9,7 @@
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>2005 年 3月 6 日 随笔档案 - 拓荒者 - 博客园</title>
+    <title>2005 年 10月 8 日 随笔档案 - 拓荒者 - 博客园</title>
     <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
     
     <link rel="stylesheet" href="/css/blog-common.min.css?v=zS6-e1bxywlu3kpHvpr1J6MySwya3ztFtEnS7RYQ0Fk" />
@@ -112,7 +112,7 @@
 
 <p class="date">
 	<span>		  
-	<a>2005年3月6日</a>
+	<a>2005年10月8日</a>
 	</span>
 </p>
 
@@ -120,9 +120,9 @@
         <h2>
             
 
-<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dstang2000/articles/113796.html">
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dstang2000/archive/2005/10/08/250188.html">
     <span>
-        我的小工具RssInIE： 在IE中点右键，可以直接查看RSS 
+        使用 NDoc 对 asp.net (Web) 项目产生文档的方法
     </span>
     
 
@@ -135,52 +135,17 @@
             
 
     <div class="c_b_p_desc">
-摘要：请参见随笔： Rss In IE        <a href="https://www.cnblogs.com/dstang2000/articles/113796.html" class="c_b_p_desc_readmore">阅读全文</a>
+摘要：NDoc是一个非常好的文档生成工具，现在还出了一些不错的中文版，如破宝的http://www.percyboy.com/w/ndoc/。但是由于NDoc现在的版本1.3 不支持Web项目，也不支持中文文件名，下面提出一个临时性的解决办法1. 解决不认识http://的Web项目的问题方法： （1）将.csproj文件复制一份，其中将项目类型由&#8220;Web&#8221;改为&#8220;Lo...        <a href="https://www.cnblogs.com/dstang2000/archive/2005/10/08/250188.html" class="c_b_p_desc_readmore">阅读全文</a>
     </div>
 
         </div>
         <p class="postfoot">
-            posted @ 2005-03-06 08:55
+            posted @ 2005-10-08 12:12
 拓荒者
-<span data-post-id="113796" class="post-view-count">阅读(480)</span> 
-<span data-post-id="113796" class="post-comment-count">评论(2)</span> 
-<span data-post-id="113796" class="post-digg-count">推荐(0)</span> 
-<a href="https://i.cnblogs.com/EditArticles.aspx?postid=113796" rel="nofollow">
-    编辑
-</a>
-
-        </p>
-    </div>
-    <div class="post">
-        <h2>
-            
-
-<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dstang2000/archive/2005/03/06/113761.html">
-    <span>
-        小工具RssInIE： 在IE中点右键，可以直接查看RSS
-    </span>
-    
-
-
-
-</a>
-
-        </h2>
-        <div class="postbody">
-            
-
-    <div class="c_b_p_desc">
-摘要：最近RSS越来越流行，一般都需要专用的软件，有时候，在IE中看见的只是xml文件，很不方便。 我这里做了一个小工具，作为IE的插件，使得点右键&#8220;选Rss In IE&#8221;时，可以直接查看RSS。 程序的原理是使用xslt将RSS的xml转成为链接，放到窗口左边，而右边用一个iframe来放内容。 （由于iframe使用得不太好，欢迎提出改进意见）。 下载RssInIE：RssI...        <a href="https://www.cnblogs.com/dstang2000/archive/2005/03/06/113761.html" class="c_b_p_desc_readmore">阅读全文</a>
-    </div>
-
-        </div>
-        <p class="postfoot">
-            posted @ 2005-03-06 00:56
-拓荒者
-<span data-post-id="113761" class="post-view-count">阅读(1580)</span> 
-<span data-post-id="113761" class="post-comment-count">评论(5)</span> 
-<span data-post-id="113761" class="post-digg-count">推荐(0)</span> 
-<a href="https://i.cnblogs.com/EditPosts.aspx?postid=113761" rel="nofollow">
+<span data-post-id="250188" class="post-view-count">阅读(1194)</span> 
+<span data-post-id="250188" class="post-comment-count">评论(3)</span> 
+<span data-post-id="250188" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=250188" rel="nofollow">
     编辑
 </a>
 
@@ -268,6 +233,6 @@
 
     
 
-    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjuXknSTxAgLf3yRQWCymmZoR5JUJVwFl_bUVNwtaopTSJ3t8tMAiZeoZexXpd6SKwg-lGyZ7A8ciflrmp23eUhRQP3dC1F014TlM_sRWUKqbdLkBqHAzoWrT4kqqflKMzU" />
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjsNxpojAxyGylRDytgESsDeHmiekD3qiFLhU-akhRGkNH2tEzm-lL0iOaYppCr9DGiro_jpPK4JkcXgYk6rYbcwte2qUxY3ULrunGNzJLbVHr7N5tYpqd1g2DzQfHHrXzI" />
 </body>
 </html>

@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="referrer" content="origin-when-crossorigin" />
-    
-    
+    <meta name="description" content="请参见随笔： Rss In IE" />
+    <meta property="og:description" content="请参见随笔： Rss In IE" />
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>2005 年 3月 6 日 随笔档案 - 拓荒者 - 博客园</title>
+    <title>我的小工具RssInIE： 在IE中点右键，可以直接查看RSS  - 拓荒者 - 博客园</title>
     <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
     
     <link rel="stylesheet" href="/css/blog-common.min.css?v=zS6-e1bxywlu3kpHvpr1J6MySwya3ztFtEnS7RYQ0Fk" />
@@ -29,6 +29,9 @@
         var skinName = 'AnotherEon001';
         var visitorUserId = '';
     </script>
+        <script>
+            var currentPostDateAdded = '2005-03-06 08:55';
+        </script>
     <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
     <script src="/js/blog-common.min.js?v=yJQaJ16S00coMfzvh-NgF2zm2J87f5VfNamFdsnKHrc"></script>
     
@@ -107,23 +110,12 @@
 <div id="main_container">
 <div id="main_content">
 <div id="content">
-	
-        <!--done-->
-
-<p class="date">
-	<span>		  
-	<a>2005年3月6日</a>
-	</span>
-</p>
-
+	<div id="post_detail">
     <div class="post">
         <h2>
             
-
-<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dstang2000/articles/113796.html">
-    <span>
-        我的小工具RssInIE： 在IE中点右键，可以直接查看RSS 
-    </span>
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dstang2000/articles/113796.html">
+    <span>我的小工具RssInIE： 在IE中点右键，可以直接查看RSS </span>
     
 
 
@@ -132,61 +124,75 @@
 
         </h2>
         <div class="postbody">
-            
-
-    <div class="c_b_p_desc">
-摘要：请参见随笔： Rss In IE        <a href="https://www.cnblogs.com/dstang2000/articles/113796.html" class="c_b_p_desc_readmore">阅读全文</a>
-    </div>
-
+            <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+请参见随笔：
+<br><a title="Rss In IE" href="/dstang2000/archive/2005/03/06/113761.html">Rss In IE</a>
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
         </div>
         <p class="postfoot">
-            posted @ 2005-03-06 08:55
-拓荒者
-<span data-post-id="113796" class="post-view-count">阅读(480)</span> 
-<span data-post-id="113796" class="post-comment-count">评论(2)</span> 
-<span data-post-id="113796" class="post-digg-count">推荐(0)</span> 
-<a href="https://i.cnblogs.com/EditArticles.aspx?postid=113796" rel="nofollow">
-    编辑
-</a>
-
+            posted on 
+<span id="post-date">2005-03-06 08:55</span>&nbsp;
+<a href="https://www.cnblogs.com/dstang2000/">拓荒者</a>&nbsp;
+阅读(<span id="post_view_count">480</span>)&nbsp;
+评论(<span id="post_comment_count">2</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditArticles.aspx?postid=113796" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(113796);return false;">收藏</a>
         </p>
     </div>
-    <div class="post">
-        <h2>
-            
+</div>
 
-<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dstang2000/archive/2005/03/06/113761.html">
-    <span>
-        小工具RssInIE： 在IE中点右键，可以直接查看RSS
-    </span>
-    
-
-
-
-</a>
-
-        </h2>
-        <div class="postbody">
-            
-
-    <div class="c_b_p_desc">
-摘要：最近RSS越来越流行，一般都需要专用的软件，有时候，在IE中看见的只是xml文件，很不方便。 我这里做了一个小工具，作为IE的插件，使得点右键&#8220;选Rss In IE&#8221;时，可以直接查看RSS。 程序的原理是使用xslt将RSS的xml转成为链接，放到窗口左边，而右边用一个iframe来放内容。 （由于iframe使用得不太好，欢迎提出改进意见）。 下载RssInIE：RssI...        <a href="https://www.cnblogs.com/dstang2000/archive/2005/03/06/113761.html" class="c_b_p_desc_readmore">阅读全文</a>
+<script src="https://common.cnblogs.com/highlight/10.3.1/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 9986, cb_blogApp = 'dstang2000', cb_blogUserGuid = 'd796310b-63cf-dd11-9e4d-001cf0cd104b';
+    var cb_entryId = 113796, cb_entryCreatedDate = '2005-03-06 08:55', cb_postType = 2;
+    updatePostStats(
+        [cb_entryId],
+        function(id, count) { $("#post_view_count").text(count) },
+        function(id, count) { $("#post_comment_count").text(count) })
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+</script>
+<a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="under-post-card">
+        <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
     </div>
-
-        </div>
-        <p class="postfoot">
-            posted @ 2005-03-06 00:56
-拓荒者
-<span data-post-id="113761" class="post-view-count">阅读(1580)</span> 
-<span data-post-id="113761" class="post-comment-count">评论(5)</span> 
-<span data-post-id="113761" class="post-digg-count">推荐(0)</span> 
-<a href="https://i.cnblogs.com/EditPosts.aspx?postid=113761" rel="nofollow">
-    编辑
-</a>
-
-        </p>
+    <div id="under_post_card1"></div>
+    <div id="cnblogs_c2" class="under-post-card">
+        <div id='div-gpt-ad-1592366332455-0' style='width: 468px; height: 60px;'></div>
     </div>
-
+    <div id="under_post_card2"></div>
+    <div id="HistoryToday" class="under-post-card"></div>
+    <script type="text/javascript">
+       var commentManager = new blogCommentManager();
+       commentManager.renderComments(0);
+       fixPostBody();
+       deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);       deliverT2();
+       deliverC1C2();
+       loadNewsAndKb();
+       loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);       LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+       GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+       loadOptUnderPost();
+       GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
 
 
 
@@ -268,6 +274,6 @@
 
     
 
-    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjuXknSTxAgLf3yRQWCymmZoR5JUJVwFl_bUVNwtaopTSJ3t8tMAiZeoZexXpd6SKwg-lGyZ7A8ciflrmp23eUhRQP3dC1F014TlM_sRWUKqbdLkBqHAzoWrT4kqqflKMzU" />
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjuu8LZ_9RZpKj9LwbiCzyIQU-8egCDkrPCHgwMhc8X4LhcgNnpS_V27IbGIDXgnBEKQCd4ms1SkQKSVfGBneHldqCZ4DnhiJZm3iqh2mWYVgWxa7uNYcunS9EFJ85GSXiE" />
 </body>
 </html>

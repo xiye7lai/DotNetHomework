@@ -150,7 +150,7 @@
             posted on 
 <span id="post-date">2010-11-02 17:43</span>&nbsp;
 <a href="https://www.cnblogs.com/dstang2000/">拓荒者</a>&nbsp;
-阅读(<span id="post_view_count">971</span>)&nbsp;
+阅读(<span id="post_view_count">973</span>)&nbsp;
 评论(<span id="post_comment_count">0</span>)&nbsp;
 <a href="https://i.cnblogs.com/EditPosts.aspx?postid=1867406" rel="nofollow">编辑</a>&nbsp;
 <a href="javascript:void(0)" onclick="AddToWz(1867406);return false;">收藏</a>
@@ -284,6 +284,6 @@ LoadPostCategoriesTags(cb_blogId, cb_entryId);       LoadPostInfoBlock(cb_blogId
 
     
 
-    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjvi33A-5iIN_-EfbqCUNSCSDo1jpTpJ1qdKjZ5Z89GdmSMj2LTa2LP4B-MsyJoYF2wqRs2o72V1mbwtn7Cwqr_Kv0AxUQF-QGlLN-oon8GEB69fN2k-vDvz6c3pZGi-LZQ" />
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjtzs8YywtoV-HBRC55KqEaAqQSXOA4VL4kK8Zd4Xfh-PskywWJ-HAQtLzcy0ND7GYBVDZMluTlEbR6KbjU2WHRu8VlgO59i9SpsVynGdMoosl8q7uVDbOIOuRgzufQCd8o" />
 </body>
 </html>

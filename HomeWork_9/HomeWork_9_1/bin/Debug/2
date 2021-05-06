@@ -233,6 +233,6 @@
 
     
 
-    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjt29OZfeU1T4tgznzE7FMx5cdsO0w1dIdfv-gJaaUouIfcpaCwq_HHSCNaP-SsQuSf9CpL-g9fFv-sm7056hFsCqdScMtpUZtHYSN9HXvbbMGhNoAkyCYLWkS8tfKfPGFI" />
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjsIEFTnVB8HtuuxAGZRpoQCOItQ6jodfYcHcrldYkBBGnz2MW1ALp04ciF3BZOEJ6rjlcQJhg2oSsT9N3M2cPEXrgcQwfVLII0tjFJZcEMi5pVwyAWDd8yp5p378NmSnmM" />
 </body>
 </html>
