@@ -1,6 +1,3 @@
-D:\github\c#\HomeWork_11\EFDemo2\bin\Debug\EFDemo2.exe.config
-D:\github\c#\HomeWork_11\EFDemo2\bin\Debug\EFDemo2.exe
-D:\github\c#\HomeWork_11\EFDemo2\bin\Debug\EFDemo2.pdb
 D:\github\c#\HomeWork_11\EFDemo2\bin\Debug\Microsoft.Win32.Primitives.dll
 D:\github\c#\HomeWork_11\EFDemo2\bin\Debug\netstandard.dll
 D:\github\c#\HomeWork_11\EFDemo2\bin\Debug\System.AppContext.dll
@@ -130,8 +127,11 @@ D:\github\c#\HomeWork_11\EFDemo2\bin\Debug\System.Memory.xml
 D:\github\c#\HomeWork_11\EFDemo2\bin\Debug\System.Numerics.Vectors.xml
 D:\github\c#\HomeWork_11\EFDemo2\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\github\c#\HomeWork_11\EFDemo2\obj\Debug\HomeWork_11_1.csprojAssemblyReference.cache
-D:\github\c#\HomeWork_11\EFDemo2\obj\Debug\EFDemo2.exe.config
 D:\github\c#\HomeWork_11\EFDemo2\obj\Debug\HomeWork_11_1.csproj.CoreCompileInputs.cache
 D:\github\c#\HomeWork_11\EFDemo2\obj\Debug\HomeWork_11_1.csproj.CopyComplete
-D:\github\c#\HomeWork_11\EFDemo2\obj\Debug\EFDemo2.exe
-D:\github\c#\HomeWork_11\EFDemo2\obj\Debug\EFDemo2.pdb
+D:\github\c#\HomeWork_11\EFDemo2\bin\Debug\HomeWork_11_1.exe.config
+D:\github\c#\HomeWork_11\EFDemo2\bin\Debug\HomeWork_11_1.exe
+D:\github\c#\HomeWork_11\EFDemo2\bin\Debug\HomeWork_11_1.pdb
+D:\github\c#\HomeWork_11\EFDemo2\obj\Debug\HomeWork_11_1.exe.config
+D:\github\c#\HomeWork_11\EFDemo2\obj\Debug\HomeWork_11_1.exe
+D:\github\c#\HomeWork_11\EFDemo2\obj\Debug\HomeWork_11_1.pdb
